@@ -19,14 +19,14 @@ namespace AdaProjectWithSql.Controllers
         }
 
         // GET: Customer
-        public async IActionResult> Index()
+        public async Task<IActionResult> Index()
         {
-            var model = _context.Customers
+            var model = await _context.Customers
                 .Include(x => x.Baskets)
                 .ThenInclude(x => x.BasketProducts)
                 .OrderBy(x => x.Name)
-                .ToList();
-            return View(await model.ToListAsync());
+                .ToListAsync();
+            return View(model);
         }
 
         // GET: Customer/Details/5

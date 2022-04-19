@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -11,7 +12,6 @@ namespace AdaProjectWithSql.Models
         {
             BasketProducts = new HashSet<BasketProduct>();
         }
-
         public int Id { get; set; }
         public int? CustomerId { get; set; }
 
